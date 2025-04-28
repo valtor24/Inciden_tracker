@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/icon_seguridad.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <title>Inciden tracker</title>
+    <title>Incident tracker</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
 
                     <div id="icon">
                         <img src="img/icon_seguridad.png" alt="Icono página">
-                        <h1>Inciden tracker</h1>
+                        <h1>Incident tracker</h1>
                     </div>
 
                     <div id="navBox">
@@ -28,43 +28,85 @@
 
                     <nav>
                         <ul>
-                            <li><a href=""><i class="bi bi-house-door"></i>Inicio</a></li>
-                            <li><a href=""><i class="bi bi-box-arrow-in-right"></i>Login</a></li>
-                            <li><a href="">Amenazas</a></li>
-                            <li><a href=""><i class="bi bi-person-lines-fill"></i>Contacto</a></li>
+                            <li><a href="#" onclick="showSection('home')"><i class="bi bi-house-door"></i>Inicio</a></li>
+                            <li><a href="#" onclick="showSection('login')"><i class="bi bi-box-arrow-in-right"></i>Inicio de sesión</a></li>
+                            <li><a href="#" onclick="showSection('amenazas')">Amenazas</a></li>
+                            <li><a href="#" onclick="showSection('novedades')">Novedades</a></li>
+                            <li><a href="#" onclick="showSection('contacto')"><i class="bi bi-person-lines-fill"></i>Contacto</a></li>
                         </ul>
                     </nav>
                 </article>
             </header>
         </article>
 
-        <section>
-            <div class="topbar">
-                <div class="topbar-left">
-                    <button class="menu-btn"><i class="bi bi-list"></i></button>
-                    <input type="text" class="search-input" placeholder="Search...">
-                    <button class="search-btn">Search</button>
-                </div>
-                <div class="topbar-right">
-                    <div class="language-dropdown">
-                        <button class="dropdown-btn">English <i class="bi bi-caret-down-fill"></i></button>
-                        <ul class="dropdown-menu">
-                            <li data-lang="English">English</li>
-                            <li data-lang="Spanish">Spanish</li>
-                            <li data-lang="Italian">Italian</li>
-                            <li data-lang="Russian">Russian</li>
-                        </ul>
+        <section class="content">
+            <!-- Sección de Inicio -->
+            <div id="Inicio" class="section active">
+                <section>
+                    <div class="topbar">
+                        <div class="topbar-left">
+                            <button class="menu-btn"><i class="bi bi-list"></i></button>
+                            <input type="text" class="search-input" placeholder="Search...">
+                            <button class="search-btn">Search</button>
+                        </div>
+                        <div class="topbar-right">
+                            <div class="language-dropdown">
+                                <button class="dropdown-btn">English <i class="bi bi-caret-down-fill"></i></button>
+                                <ul class="dropdown-menu">
+                                    <li data-lang="English">English</li>
+                                    <li data-lang="Spanish">Spanish</li>
+                                    <li data-lang="Italian">Italian</li>
+                                    <li data-lang="Russian">Russian</li>
+                                </ul>
+                            </div>
+        
+                            <button class="notification-btn">
+                                <span class="notification-dot"></span><i class="bi bi-bell-fill"></i>
+                            </button>
+                            <button class="dark-mode-btn"><i class="bi bi-moon"></i></button>
+                            <button class="fullscreen-btn"><i class="bi bi-arrows-fullscreen"></i></button>
+                        </div>
                     </div>
+                </section>
+        
+            </div>
 
-                    <button class="notification-btn">
-                        <span class="notification-dot"></span><i class="bi bi-bell-fill"></i>
-                    </button>
-                    <button class="dark-mode-btn"><i class="bi bi-moon"></i></button>
-                    <button class="fullscreen-btn"><i class="bi bi-arrows-fullscreen"></i></button>
-                </div>
+            <!-- Sección de Log in -->
+            <div id="login" class="section hidden">
+                <h2>Inicio de sesión</h2>
+                <form id="loginForm" onsubmit="login(event)">
+                    <div class="form-group">
+                        <label for="username">Usuario:</label>
+                        <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+                    </div>
+            
+                    <button type="submit">Iniciar Sesión</button>
+                    <p id="loginError" style="color: red; display: none; margin-top: 10px;"></p>
+                </form>
+            </div>
+            
+
+            <!-- Sección de Amenazas -->
+            <div id="amenazas" class="section hidden">
+                <h2>Amenazas</h2>
+                <p>Contenido relacionado con amenazas...</p>
+            </div>
+
+            <!-- Sección de Contacto -->
+            <div id="contacto" class="section hidden">
+                <h2>Contacto</h2>
+                <p>Información de contacto...</p>
             </div>
         </section>
 
+        <article>
+
+        </article>
     </main>
     <script src="js/script.js" defer></script>
 </body>

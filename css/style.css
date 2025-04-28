@@ -173,3 +173,12 @@ nav i {
     font-size: 20px;
     cursor: pointer;
 }
+
+.hidden {
+    display: none;
+}
+
+/* Sección activa */
+.active {
+    display: block;
+}

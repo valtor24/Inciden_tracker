@@ -61,7 +61,7 @@ async function login(event) {
   }
 
   try {
-      const response = await fetch("http://localhost:3000/login", {
+    const response = await fetch("http://127.0.0.1:5000/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ username, password })
@@ -70,9 +70,10 @@ async function login(event) {
       const data = await response.json();
 
       if (data.success) {
-          // Si quieres guardar info en localStorage/sessionStorage, hazlo aquí
-          window.location.href = "dashboard.html"; // o la ruta que uses
+          // Si el login es exitoso, redirigir
+          window.location.href = "dashboard.html"; // O donde quieras que redirija
       } else {
+          // Si hubo un error, mostrar el mensaje
           errorMsg.textContent = data.message || "Usuario o contraseña incorrectos.";
           errorMsg.style.display = "block";
       }

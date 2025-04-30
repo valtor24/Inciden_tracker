@@ -28,10 +28,8 @@
                     <nav>
                         <ul>
                             <li><a href="#" onclick="showSection('home')"><i class="bi bi-house-door"></i>Inicio</a></li>
-                            <li><a href="#" onclick="showSection('login')"><i class="bi bi-box-arrow-in-right"></i>Inicio de sesión</a></li>
                             <li><a href="#" onclick="showSection('amenazas')">Amenazas</a></li>
                             <li><a href="#" onclick="showSection('novedades')">Novedades</a></li>
-                            <li><a href="#" onclick="showSection('contacto')"><i class="bi bi-person-lines-fill"></i>Contacto</a></li>
                         </ul>
                     </nav>
                 </article>
@@ -68,27 +66,7 @@
                     </div>
                 </section>
         
-            </div>
-
-            <!-- Sección de Log in -->
-            <div id="login" class="section hidden">
-                <h2>Inicio de sesión</h2>
-                <form id="loginForm" onsubmit="login(event)">
-                    <div class="form-group">
-                        <label for="username">Usuario:</label>
-                        <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required>
-                    </div>
-            
-                    <div class="form-group">
-                        <label for="password">Contraseña:</label>
-                        <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
-                    </div>
-            
-                    <button type="submit">Iniciar Sesión</button>
-                    <p id="loginError" style="color: red; display: none; margin-top: 10px;"></p>
-                </form>
-            </div>
-            
+            </div>            
 
             <!-- Sección de Amenazas -->
             <div id="amenazas" class="section hidden">
@@ -96,11 +74,6 @@
                 <p>Contenido relacionado con amenazas...</p>
             </div>
 
-            <!-- Sección de Contacto -->
-            <div id="contacto" class="section hidden">
-                <h2>Contacto</h2>
-                <p>Información de contacto...</p>
-            </div>
         </section>
 
         <article>
